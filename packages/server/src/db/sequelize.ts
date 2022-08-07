@@ -5,12 +5,9 @@ import path from 'path';
 
 import logger from '~/lib/logger';
 
-const options = config.get<Options>('postgres');
+const options = config.get<Options>('db');
 
-const sequelize = new Sequelize({
-  dialect: 'postgres',
-  ...options,
-});
+const sequelize = new Sequelize(options);
 
 export default sequelize;
 
