@@ -1,0 +1,28 @@
+{
+  "name": "@charlotte/shared",
+  "version": "0.1.0",
+  "files": [
+    "dist",
+    "package.json",
+    "package-lock.json"
+  ],
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "private": true,
+  "scripts": {
+    "lint": "eslint \"./**/*.{tsx,ts,js,json}\"",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eiskalteschatten/charlotte.git"
+  },
+  "author": "Alex Seifert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eiskalteschatten/charlotte/issues"
+  },
+  "homepage": "https://github.com/eiskalteschatten/charlotte#readme"
+}
