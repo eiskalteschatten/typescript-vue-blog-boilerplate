@@ -1,0 +1,11 @@
+@import "./variables";
+
+:root {
+  --toolbar-height: #{$toolbarHeightLgUp};
+}
+
+@media (max-width: $mdMax) {
+  :root {
+    --toolbar-height: #{$toolbarHeightMdDown};
+  }
+}

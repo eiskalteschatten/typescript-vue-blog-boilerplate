@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
+import '@alexseifert/frontend-library/styles/reboot.scss';
+import '@alexseifert/frontend-library/styles/globals.scss';
+import '@alexseifert/frontend-library/styles/fonts/MaterialIconsOutlined.scss';
+
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+
+import './styles/globals.scss';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
