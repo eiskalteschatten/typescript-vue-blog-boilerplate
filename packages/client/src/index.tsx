@@ -7,8 +7,11 @@ import '@alexseifert/frontend-library/styles/globals.scss';
 import '@alexseifert/frontend-library/styles/fonts/MaterialIconsOutlined.scss';
 
 import App from './App';
+import store from './store';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+
+import './i18n';
 
 import './styles/globals.scss';
 
