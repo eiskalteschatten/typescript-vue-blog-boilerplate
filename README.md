@@ -1,2 +1,2 @@
-# charlotte
+# Charlotte
 A Personal Organizer Application
