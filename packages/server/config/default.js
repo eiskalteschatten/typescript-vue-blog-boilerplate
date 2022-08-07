@@ -7,7 +7,7 @@ module.exports = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    ssl: Boolean(process.env.DB_SSL),
+    ssl: process.env.DB_SSL === 'true',
     dialect: process.env.DB_DIALECT || 'postgres',
   },
   redis: {
