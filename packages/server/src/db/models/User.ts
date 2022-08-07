@@ -15,7 +15,7 @@ export default class User extends Model<InferAttributes<User>, InferCreationAttr
 User.init(
   {
     id: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
       unique: true,

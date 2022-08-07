@@ -13,7 +13,7 @@ export default {
 
     return query.createTable('users', {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         unique: true,
