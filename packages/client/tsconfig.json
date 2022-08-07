@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2020",
     "lib": [
       "dom",
       "dom.iterable",
@@ -12,13 +12,17 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "strictPropertyInitialization": false,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "noImplicitOverride": true,
+    "baseUrl": "src"
   },
   "include": [
     "src"
