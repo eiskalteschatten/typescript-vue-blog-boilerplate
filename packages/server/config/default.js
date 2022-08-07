@@ -15,7 +15,7 @@ module.exports = {
   auth: {
     session: {
       secret: process.env.AUTH_SESSION_SECRET,
-      salt: process.env.AUTH_SALT,
+      salt: process.env.AUTH_SALT || 'BRp-VN@xJre+mCUX',
     },
   },
   jwt: {
