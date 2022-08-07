@@ -3,6 +3,7 @@ import { FLWrapper } from '@alexseifert/frontend-library';
 
 import { useAppDispatch } from 'store/hooks';
 import { setWindowWidth, setPrefersDarkMode } from 'store/entities/ui';
+import GlobalErrorBoundary from 'components/errors/GlobalErrorBoundary';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -23,10 +24,12 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <FLWrapper>
-      test
-    </FLWrapper>
+    <GlobalErrorBoundary>
+      <FLWrapper>
+        test
+      </FLWrapper>
+    </GlobalErrorBoundary>
   );
-}
+};
 
 export default App;
