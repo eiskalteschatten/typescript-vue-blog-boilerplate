@@ -32,7 +32,7 @@ const LeftSide: React.FC<Props> = ({ hasSidebar }) => {
           className={styles.logo}
         >
           <Logo width={logoSize} height={logoSize} />
-          <span>BookJournal</span>
+          <span>Charlotte</span>
         </Link>
       ) : (
         <div className={styles.mobileWrapper}>
