@@ -5,7 +5,7 @@
 
   height: $size;
   width: $size;
-  color: var(--sidebar-color);
+  color: var(--color);
   padding: 5px;
   display: flex;
   align-items: center;
@@ -19,20 +19,20 @@
   margin: 10px 0;
 
   &:hover {
-    color: var(--sidebar-color);
+    color: var(--color);
     text-decoration: none;
-    background-color: darken($lightSidebarBg, 10%);
+    background-color: darken($lightBg, 10%);
 
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($darkSidebarBg, 10%);
+      background-color: lighten($darkBg, 10%);
     }
   }
 
   &:active {
-    background-color: darken($lightSidebarBg, 15%);
+    background-color: darken($lightBg, 15%);
 
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($darkSidebarBg, 15%);
+      background-color: lighten($darkBg, 15%);
     }
   }
 
@@ -42,10 +42,10 @@
 
   &.selected {
     opacity: 1;
-    background-color: darken($lightSidebarBg, 15%);
+    background-color: darken($lightBg, 15%);
 
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($darkSidebarBg, 15%);
+      background-color: lighten($darkBg, 15%);
     }
   }
 

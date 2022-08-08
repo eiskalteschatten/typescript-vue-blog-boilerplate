@@ -6,11 +6,11 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  color: $darkSidebarColor;
+  color: var(--color);
   text-decoration: none;
 
   &:hover {
-    color: $darkSidebarColor;
+    color: var(--color);
   }
 }
 

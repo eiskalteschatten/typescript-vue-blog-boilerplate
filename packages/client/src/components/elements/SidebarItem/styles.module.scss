@@ -1,7 +1,7 @@
 @import "../../../styles/variables";
 
 .sidebarItem {
-  color: var(--sidebar-color);
+  color: var(--color);
   padding: 5px;
   margin: 5px;
   display: flex;
@@ -15,19 +15,19 @@
 
   &:hover {
     text-decoration: none;
-    background-color: darken($lightSidebarBg, 10%);
-    color: var(--sidebar-color);
+    background-color: darken($lightBg, 10%);
+    color: var(--color);
 
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($darkSidebarBg, 10%);
+      background-color: lighten($darkBg, 10%);
     }
   }
 
   &:active {
-    background-color: darken($lightSidebarBg, 15%);
+    background-color: darken($lightBg, 15%);
 
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($darkSidebarBg, 15%);
+      background-color: lighten($darkBg, 15%);
     }
   }
 
@@ -37,10 +37,10 @@
 
   &.selected {
     opacity: 1;
-    background-color: darken($lightSidebarBg, 20%);
+    background-color: darken($lightBg, 20%);
 
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($darkSidebarBg, 20%);
+      background-color: lighten($darkBg, 20%);
     }
   }
 
