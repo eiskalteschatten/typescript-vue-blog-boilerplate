@@ -1,0 +1,15 @@
+@import "../../../../../styles/variables";
+
+.toolbar {
+  background-color: $darkSidebarBg;
+  color: $darkSidebarColor;
+  padding: 10px;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.toolbarButton {
+  font-size: 1.1em;
+  color: $darkSidebarColor;
+}

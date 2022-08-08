@@ -1,9 +1,11 @@
 import React, { useLayoutEffect } from 'react';
 import { FLWrapper } from '@alexseifert/frontend-library';
+import { BrowserRouter } from 'react-router-dom';
 
 import { useAppDispatch } from 'store/hooks';
 import { setWindowWidth, setPrefersDarkMode } from 'store/entities/ui';
 import GlobalErrorBoundary from 'components/errors/GlobalErrorBoundary';
+import Router from 'router';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +28,9 @@ const App: React.FC = () => {
   return (
     <GlobalErrorBoundary>
       <FLWrapper>
-        test
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
       </FLWrapper>
     </GlobalErrorBoundary>
   );
