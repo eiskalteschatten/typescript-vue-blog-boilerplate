@@ -12,7 +12,7 @@ const ListsRouter: React.FC = () => {
       <Routes>
         {/* <Route path='/add' element={<EditBook />} /> */}
 
-        <Route path='/:list' element={<div />} />
+        <Route path='/:list' element={<div>lists test</div>} />
         <Route path='/:list/:id' element={<div />} />
         {/* <Route path='/:list/:id/edit' element={<EditBook />} /> */}
 
