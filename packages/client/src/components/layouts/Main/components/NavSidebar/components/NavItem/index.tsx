@@ -13,9 +13,9 @@ export interface Props {
 
 const NavItem: React.FC<Props> = ({ ItemIcon, title, path, selectedPath }) => {
   const resolved = useResolvedPath(selectedPath);
-  const match = useMatch({ path: resolved.pathname, end: false });
+  const match = useMatch({ path: resolved.pathname, end: resolved.pathname === '/' });
 
-  if (path.charAt(path.length -1) === '/') {
+  if (path !== '/' && path.charAt(path.length -1) === '/') {
     path = path.slice(0, -1);
   }
 

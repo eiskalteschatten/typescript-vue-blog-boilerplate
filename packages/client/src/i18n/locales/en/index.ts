@@ -4,6 +4,7 @@ import nav from './nav';
 import lists from './lists';
 import account from './account';
 import pageTitles from './pageTitles';
+import dashboard from './dashboard';
 
 // Namespaces are defined here
 export default {
@@ -13,4 +14,5 @@ export default {
   lists,
   account,
   pageTitles,
+  dashboard,
 };
