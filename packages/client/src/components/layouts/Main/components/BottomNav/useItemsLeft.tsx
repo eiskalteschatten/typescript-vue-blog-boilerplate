@@ -7,10 +7,10 @@ const useItemsTop = (): NavItemProp[] => {
 
   return [
     {
-      path: '/books/all',
+      path: '/',
       ItemIcon: () => <span className='material-icons'>menu_book</span>,
-      title: t('books'),
-      selectedPath: '/books',
+      title: t('dashboard'),
+      selectedPath: '/',
     },
     {
       path: '/lists',
