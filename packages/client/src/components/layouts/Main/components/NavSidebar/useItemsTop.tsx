@@ -8,7 +8,7 @@ const useItemsTop = (): NavItemProp[] => {
   return [
     {
       path: '/',
-      ItemIcon: () => <span className='material-icons'>menu_book</span>,
+      ItemIcon: () => <span className='material-icons'>dashboard</span>,
       title: t('dashboard'),
       selectedPath: '/',
     },
