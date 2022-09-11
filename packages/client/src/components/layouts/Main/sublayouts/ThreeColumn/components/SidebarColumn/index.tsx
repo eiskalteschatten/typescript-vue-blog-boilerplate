@@ -3,11 +3,11 @@ import React from 'react';
 import Sidebar from 'components/elements/Sidebar';
 import SidebarItem, { Props as SidebarItemProps } from 'components/elements/SidebarItem';
 
-import useSidebarItems from './useSidebarItems';
+interface Props {
+  sidebarItems: SidebarItemProps[];
+}
 
-const ListsSidebar: React.FC = () => {
-  const sidebarItems = useSidebarItems();
-
+const SidebarColumn: React.FC<Props> = ({ sidebarItems }) => {
   return (
     <Sidebar>
       {sidebarItems.map((item: SidebarItemProps, index: number) => (
@@ -20,4 +20,4 @@ const ListsSidebar: React.FC = () => {
   );
 };
 
-export default ListsSidebar;
+export default SidebarColumn;

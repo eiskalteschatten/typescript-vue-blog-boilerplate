@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import MainLayout from 'components/layouts/Main';
-import Sidebar from 'components/layouts/Main/components/ListsSidebar';
+import ThreeColumnLayout from 'components/layouts/Main/sublayouts/ThreeColumn';
+import { Props as SidebarItemProps } from 'components/elements/SidebarItem';
 // import BookListLayout from 'components/layouts/Main/sublayouts/BookList';
 
 const ListsRouter: React.FC = () => {
+  const { t } = useTranslation(['lists']);
+
+  const sidebarItems = useMemo<SidebarItemProps[]>(() => [
+    {
+      path: '/lists',
+      ItemIcon: () => <span className='material-icons'>checklist</span>,
+      title: t('wishlist'),
+    },
+  ], []);
+
   return (
-    <MainLayout sidebar={<Sidebar />}>
+    <ThreeColumnLayout sidebarItems={sidebarItems}>
       {/* <BookListLayout> */}
       <Routes>
         {/* <Route path='/add' element={<EditBook />} /> */}
@@ -20,7 +31,7 @@ const ListsRouter: React.FC = () => {
         <Route path='*' element={<div />} />
       </Routes>
       {/* </BookListLayout> */}
-    </MainLayout>
+    </ThreeColumnLayout>
   );
 };
 
