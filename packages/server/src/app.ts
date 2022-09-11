@@ -12,7 +12,9 @@ const port = process.env.PORT || 4000;
 
 const app = Fastify({
   logger: {
-    prettyPrint: true,
+    transport: {
+      target: 'pino-pretty',
+    },
   },
   ignoreTrailingSlash: true,
   ...process.env.NODE_ENV !== 'development' && {
