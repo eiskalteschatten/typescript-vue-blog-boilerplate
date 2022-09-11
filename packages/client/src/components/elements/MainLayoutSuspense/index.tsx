@@ -10,9 +10,11 @@ interface Props {
 const MainLayoutSuspense: React.FC<Props> = ({ children }) => {
   return (
     <MainLayout>
-      <Suspense fallback={<SuspenseSpinner />}>
-        {children}
-      </Suspense>
+      <div style={{ flexGrow: 1 }}>
+        <Suspense fallback={<SuspenseSpinner />}>
+          {children}
+        </Suspense>
+      </div>
     </MainLayout>
   );
 };
