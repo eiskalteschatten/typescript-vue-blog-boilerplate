@@ -1,8 +1,7 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import SuspenseSpinner from 'components/elements/SuspenseSpinner';
-import MainLayout from 'components/layouts/Main';
+import MainLayoutSuspense from 'components/elements/MainLayoutSuspense';
 
 import ListsRouter from './Lists';
 
@@ -15,37 +14,29 @@ const MainRouter: React.FC = () => {
   return (
     <Routes>
       <Route path='/' element={
-        <MainLayout>
-          <Suspense fallback={<SuspenseSpinner />}>
-            <Dashboard />
-          </Suspense>
-        </MainLayout>
+        <MainLayoutSuspense>
+          <Dashboard />
+        </MainLayoutSuspense>
       } />
 
       <Route path='/lists/*' element={<ListsRouter />} />
 
       <Route path='/settings' element={
-        <MainLayout>
-          <Suspense fallback={<SuspenseSpinner />}>
-            <Settings />
-          </Suspense>
-        </MainLayout>
+        <MainLayoutSuspense>
+          <Settings />
+        </MainLayoutSuspense>
       } />
 
       <Route path='/account' element={
-        <MainLayout>
-          <Suspense fallback={<SuspenseSpinner />}>
-            <Account />
-          </Suspense>
-        </MainLayout>
+        <MainLayoutSuspense>
+          <Account />
+        </MainLayoutSuspense>
       } />
 
       <Route path='*' element={
-        <MainLayout>
-          <Suspense fallback={<SuspenseSpinner />}>
-            <FourOhFour />
-          </Suspense>
-        </MainLayout>
+        <MainLayoutSuspense>
+          <FourOhFour />
+        </MainLayoutSuspense>
       } />
     </Routes>
   );
