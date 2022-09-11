@@ -8,7 +8,7 @@ import path from 'path';
 import config from 'config';
 import clientRoot from '@charlotte/client';
 
-const port = process.env.PORT || 4000;
+const port = Number(process.env.PORT) || 4000;
 
 const app = Fastify({
   logger: {
@@ -43,12 +43,14 @@ if (process.env.NODE_ENV !== 'development') {
 
   // Explicitly set the not found handler to send the React app
   // so that the React routing works
-  app.setNotFoundHandler((req, res) => res.sendFile('index.html'));
+  app.setNotFoundHandler((req, res) => {
+    res.sendFile('index.html');
+  });
 }
 
-const address = process.env.RUNNING_IN_DOCKER === 'true' ? '0.0.0.0' : undefined;
+const host = process.env.RUNNING_IN_DOCKER === 'true' ? '0.0.0.0' : undefined;
 
-app.listen(port, address, error => {
+app.listen({ port, host }, error => {
   if (error) {
     throw error;
   }
