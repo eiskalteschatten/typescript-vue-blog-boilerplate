@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 import ThreeColumnLayout from 'components/layouts/Main/sublayouts/ThreeColumn';
 import { Props as SidebarItemProps } from 'components/elements/SidebarItem';
-// import BookListLayout from 'components/layouts/Main/sublayouts/BookList';
 
 const ListsRouter: React.FC = () => {
   const { t } = useTranslation(['lists']);
@@ -19,7 +18,6 @@ const ListsRouter: React.FC = () => {
 
   return (
     <ThreeColumnLayout sidebarItems={sidebarItems}>
-      {/* <BookListLayout> */}
       <Routes>
         {/* <Route path='/add' element={<EditBook />} /> */}
 
@@ -30,7 +28,6 @@ const ListsRouter: React.FC = () => {
         {/* TODO: By default, the first list should be selected */}
         <Route path='*' element={<div />} />
       </Routes>
-      {/* </BookListLayout> */}
     </ThreeColumnLayout>
   );
 };
