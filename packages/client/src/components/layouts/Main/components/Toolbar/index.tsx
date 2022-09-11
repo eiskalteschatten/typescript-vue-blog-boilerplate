@@ -6,14 +6,10 @@ import AccountMenu from './components/AccountMenu';
 
 import styles from './styles.module.scss';
 
-interface Props {
-  hasSidebar?: boolean;
-}
-
-const Toolbar: React.FC<Props> = ({ hasSidebar }) => {
+const Toolbar: React.FC = () => {
   return (
     <div className={styles.toolbar}>
-      <LeftSide hasSidebar={hasSidebar} />
+      <LeftSide />
       <SearchBox />
       <AccountMenu />
     </div>

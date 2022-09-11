@@ -13,11 +13,7 @@ import toolbarStyles from '../../styles.module.scss';
 
 const logoSize = 30;
 
-interface Props {
-  hasSidebar?: boolean;
-}
-
-const LeftSide: React.FC<Props> = ({ hasSidebar }) => {
+const LeftSide: React.FC = () => {
   const dispatch = useAppDispatch();
   const { bookId } = useParams();
   const navigate = useNavigate();
@@ -36,28 +32,22 @@ const LeftSide: React.FC<Props> = ({ hasSidebar }) => {
         </Link>
       ) : (
         <div className={styles.mobileWrapper}>
-          {!hasSidebar ? (
-            <Logo width={logoSize} height={logoSize} />
+          {bookId && windowWidth <= constants.window.WINDOW_WIDTHS.smMax ? (
+            <Button
+              className={toolbarStyles.toolbarButton}
+              iconButton
+              onClick={() => navigate(backPathname)}
+            >
+              <span className='material-icons'>arrow_back</span>
+            </Button>
           ) : (
-            <>
-              {bookId && windowWidth <= constants.window.WINDOW_WIDTHS.smMax ? (
-                <Button
-                  className={toolbarStyles.toolbarButton}
-                  iconButton
-                  onClick={() => navigate(backPathname)}
-                >
-                  <span className='material-icons'>arrow_back</span>
-                </Button>
-              ) : (
-                <Button
-                  className={toolbarStyles.toolbarButton}
-                  iconButton
-                  onClick={() => dispatch(setMobileSidebarOpen(!mobileSidebarOpen))}
-                >
-                  <span className='material-icons'>menu</span>
-                </Button>
-              )}
-            </>
+            <Button
+              className={toolbarStyles.toolbarButton}
+              iconButton
+              onClick={() => dispatch(setMobileSidebarOpen(!mobileSidebarOpen))}
+            >
+              <span className='material-icons'>menu</span>
+            </Button>
           )}
         </div>
       )}

@@ -21,7 +21,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <div className={styles.layout}>
       <GeneralLoader />
-      <Toolbar hasSidebar={false} />
+      <Toolbar />
 
       <div className={styles.columnLayout}>
         {windowWidth >= constants.window.WINDOW_WIDTHS.lgMin && (
