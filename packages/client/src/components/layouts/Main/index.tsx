@@ -13,7 +13,6 @@ interface Props {
 }
 
 const NavSidebar = React.lazy(() => import('./components/NavSidebar'));
-const BottomNav = React.lazy(() => import('./components/BottomNav'));
 
 const MainLayout: React.FC<Props> = ({ children }) => {
   const { windowWidth } = useAppSelector(state => state.ui);
@@ -32,12 +31,6 @@ const MainLayout: React.FC<Props> = ({ children }) => {
 
         {children}
       </div>
-
-      {windowWidth <= constants.window.WINDOW_WIDTHS.mdMax && (
-        <Suspense fallback={<div />}>
-          <BottomNav />
-        </Suspense>
-      )}
     </div>
   );
 };
