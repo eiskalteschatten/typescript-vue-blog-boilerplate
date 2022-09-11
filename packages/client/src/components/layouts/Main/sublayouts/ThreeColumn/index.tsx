@@ -16,7 +16,6 @@ interface Props {
 
 const ThreeColumnLayout: React.FC<Props> = ({ sidebarItems, children }) => {
   const { windowWidth } = useAppSelector(state => state.ui);
-
   const sidebar = useMemo(() => <SidebarColumn sidebarItems={sidebarItems} />, [sidebarItems]);
 
   return (
