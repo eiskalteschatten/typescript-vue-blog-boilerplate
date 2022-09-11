@@ -3,9 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import MainLayoutSuspense from 'components/elements/MainLayoutSuspense';
 
-import ListsRouter from './Lists';
-
 const Dashboard = React.lazy(() => import('../pages/Dashboard'));
+const ListsRouter = React.lazy(() => import('./Lists'));
 const Settings = React.lazy(() => import('../pages/Settings'));
 const Account = React.lazy(() => import('../pages/Account'));
 const FourOhFour = React.lazy(() => import('../pages/FourOhFour'));
@@ -19,7 +18,11 @@ const MainRouter: React.FC = () => {
         </MainLayoutSuspense>
       } />
 
-      <Route path='/lists/*' element={<ListsRouter />} />
+      <Route path='/lists/*' element={
+        <MainLayoutSuspense>
+          <ListsRouter />
+        </MainLayoutSuspense>
+      } />
 
       <Route path='/settings' element={
         <MainLayoutSuspense>
