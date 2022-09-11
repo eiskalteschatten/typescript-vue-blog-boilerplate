@@ -1,8 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { usePopper } from 'react-popper';
 import { Link } from 'react-router-dom';
 import { Button } from '@alexseifert/frontend-library';
 
+import PopperWrapper from 'components/elements/PopperWrapper';
+import PopupBase from 'components/elements/PopupBase';
+import Menu from 'components/elements/Menu';
+import MenuItem from 'components/elements/MenuItem';
 import { useAppDispatch } from 'store/hooks';
 import { logout } from 'store/entities/account';
 
@@ -11,8 +16,25 @@ import styles from '../../styles.module.scss';
 const AccountMenu: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const buttonReference = useRef<HTMLButtonElement>(null);
+  const popperReference = useRef<HTMLDivElement>(null);
   const { t } = useTranslation(['account']);
   const dispatch = useAppDispatch();
+
+  const { styles: popperStyles, attributes } = usePopper(
+    buttonReference.current,
+    popperReference.current,
+    {
+      placement: 'bottom-end',
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 0],
+          },
+        },
+      ],
+    }
+  );
 
   const handleLogout = () => {
     dispatch(logout());
@@ -29,7 +51,7 @@ const AccountMenu: React.FC = () => {
         <span className='material-icons'>account_circle</span>
       </Button>
 
-      {/* <PopperWrapper
+      <PopperWrapper
         ref={popperReference}
         style={popperStyles.popper}
         {...attributes.popper}
@@ -49,7 +71,7 @@ const AccountMenu: React.FC = () => {
             </MenuItem>
           </Menu>
         </PopupBase>
-      </PopperWrapper> */}
+      </PopperWrapper>
     </>
   );
 };
