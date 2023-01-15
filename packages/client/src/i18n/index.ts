@@ -15,6 +15,7 @@ i18n
     preload: languages,
     keySeparator: false,
     debug: process.env.NODE_ENV === 'development',
+    returnNull: false,
   });
 
 export default i18n;
