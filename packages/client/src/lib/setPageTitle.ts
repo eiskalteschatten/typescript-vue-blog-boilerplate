@@ -1,3 +1,3 @@
 export default (title?: string): void => {
-  document.title = title ? `${title} | Charlotte` : 'title';
+  document.title = title ? `${title} | Typescript Fastify React Boilerplate` : 'title';
 };

@@ -1,5 +1,5 @@
 {
-  "name": "@charlotte/client",
+  "name": "@tfrb/client",
   "version": "0.1.0",
   "files": [
     "build",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@alexseifert/frontend-library": "^1.0.0-beta.10",
-    "@charlotte/shared": "^0.1.0",
+    "@tfrb/shared": "^0.1.0",
     "@popperjs/core": "^2.11.6",
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/react": "^13.3.0",

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { passwordRegex } from '@charlotte/shared/dist/lib/accounts';
+import { passwordRegex } from '@tfrb/shared/dist/lib/accounts';
 import { Input, Button } from '@alexseifert/frontend-library';
 
 import { useAppDispatch, useAppSelector } from 'store/hooks';

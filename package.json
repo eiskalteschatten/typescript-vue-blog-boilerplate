@@ -1,14 +1,14 @@
 {
-  "name": "charlotte",
+  "name": "typescript-fastify-react-boilerplate",
   "version": "0.1.0",
-  "description": "A personal organizer",
+  "description": "A boilerplate project for creating a project with a React frontend and a Fastify-based backend.",
   "main": "./packages/server/dist/src/server.js",
   "scripts": {
     "test": "npm run test -ws",
     "lint": "npm run lint -ws",
     "start": "npm --prefix ./packages/server start",
-    "predev": "docker compose up -d && npm run build -w=@charlotte/shared",
-    "dev": "concurrently \"npm run dev -w=@charlotte/client\" \"npm run dev -w=@charlotte/server\"",
+    "predev": "docker compose up -d && npm run build -w=@tfrb/shared",
+    "dev": "concurrently \"npm run dev -w=@tfrb/client\" \"npm run dev -w=@tfrb/server\"",
     "prebuild": "rm -rf ./packages/client/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
     "build": "npm run build -ws"
   },
@@ -17,14 +17,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eiskalteschatten/charlotte.git"
+    "url": "git+https://github.com/eiskalteschatten/typescript-fastify-react-boilerplate.git"
   },
   "author": "Alex Seifert",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/eiskalteschatten/charlotte/issues"
+    "url": "https://github.com/eiskalteschatten/typescript-fastify-react-boilerplate/issues"
   },
-  "homepage": "https://github.com/eiskalteschatten/charlotte#readme",
+  "homepage": "https://github.com/eiskalteschatten/typescript-fastify-react-boilerplate#readme",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/user-event": "^14.0.0",
@@ -49,8 +49,8 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@charlotte/client": "file:packages/client",
-    "@charlotte/server": "file:packages/server",
-    "@charlotte/shared": "file:packages/shared"
+    "@tfrb/client": "file:packages/client",
+    "@tfrb/server": "file:packages/server",
+    "@tfrb/shared": "file:packages/shared"
   }
 }

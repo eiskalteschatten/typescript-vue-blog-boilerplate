@@ -1,5 +1,5 @@
 {
-  "name": "@charlotte/shared",
+  "name": "@tfrb/shared",
   "version": "0.1.0",
   "files": [
     "dist",
@@ -14,15 +14,5 @@
   "scripts": {
     "lint": "eslint \"./**/*.{tsx,ts,js,json}\"",
     "build": "tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eiskalteschatten/charlotte.git"
-  },
-  "author": "Alex Seifert",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eiskalteschatten/charlotte/issues"
-  },
-  "homepage": "https://github.com/eiskalteschatten/charlotte#readme"
+  }
 }
