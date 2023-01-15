@@ -3,23 +3,23 @@ version: "3.8"
 services:
   postgres:
     image: postgres:14-alpine
-    container_name: charlotte_postgres
+    container_name: tfrb_postgres
     restart: always
     volumes:
-      - "charlotte_postgresql_data:/var/lib/postgresql/data"
+      - "tfrb_postgresql_data:/var/lib/postgresql/data"
     environment:
-      POSTGRES_DB: charlotte
-      POSTGRES_USER: charlotte
-      POSTGRES_PASSWORD: charlotte
+      POSTGRES_DB: tfrb
+      POSTGRES_USER: tfrb
+      POSTGRES_PASSWORD: tfrb
     ports:
       - "5432:5432"
 
   redis:
     image: redis:alpine
     restart: always
-    container_name: charlotte_redis
+    container_name: tfrb_redis
     ports:
       - "6379:6379"
 
 volumes:
-  charlotte_postgresql_data:
+  tfrb_postgresql_data:
