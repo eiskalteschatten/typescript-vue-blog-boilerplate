@@ -1,14 +1,14 @@
 {
-  "name": "typescript-fastify-react-boilerplate",
+  "name": "typescript-fastify-vue-boilerplate",
   "version": "0.1.0",
-  "description": "A boilerplate project for creating a project with a React frontend and a Fastify-based backend.",
+  "description": "A boilerplate project for creating a project with a Vue.js frontend and a Fastify-based backend.",
   "main": "./packages/server/dist/src/server.js",
   "scripts": {
     "test": "npm run test -ws",
     "lint": "npm run lint -ws",
     "start": "npm --prefix ./packages/server start",
-    "predev": "docker compose up -d && npm run build -w=@tfrb/shared",
-    "dev": "concurrently \"npm run dev -w=@tfrb/client\" \"npm run dev -w=@tfrb/server\"",
+    "predev": "docker compose up -d && npm run build -w=@tfvb/shared",
+    "dev": "concurrently \"npm run dev -w=@tfvb/client\" \"npm run dev -w=@tfvb/server\"",
     "prebuild": "rm -rf ./packages/client/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
     "build": "npm run build -ws"
   },
@@ -49,8 +49,8 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@tfrb/client": "file:packages/client",
-    "@tfrb/server": "file:packages/server",
-    "@tfrb/shared": "file:packages/shared"
+    "@tfvb/client": "file:packages/client",
+    "@tfvb/server": "file:packages/server",
+    "@tfvb/shared": "file:packages/shared"
   }
 }

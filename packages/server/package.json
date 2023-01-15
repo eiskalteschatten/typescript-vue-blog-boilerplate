@@ -1,5 +1,5 @@
 {
-  "name": "@tfrb/server",
+  "name": "@tfvb/server",
   "version": "0.1.0",
   "files": [
     "dist",
@@ -18,8 +18,8 @@
   "author": "Alex Seifert",
   "license": "ISC",
   "dependencies": {
-    "@tfrb/client": "^0.1.0",
-    "@tfrb/shared": "^0.1.0",
+    "@tfvb/client": "^0.1.0",
+    "@tfvb/shared": "^0.1.0",
     "@fastify/autoload": "^5.4.0",
     "@fastify/helmet": "^10.0.0",
     "@fastify/passport": "^2.2.0",

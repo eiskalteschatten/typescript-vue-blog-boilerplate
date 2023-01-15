@@ -3,23 +3,23 @@ version: "3.8"
 services:
   postgres:
     image: postgres:14-alpine
-    container_name: tfrb_postgres
+    container_name: tfvb_postgres
     restart: always
     volumes:
-      - "tfrb_postgresql_data:/var/lib/postgresql/data"
+      - "tfvb_postgresql_data:/var/lib/postgresql/data"
     environment:
-      POSTGRES_DB: tfrb
-      POSTGRES_USER: tfrb
-      POSTGRES_PASSWORD: tfrb
+      POSTGRES_DB: tfvb
+      POSTGRES_USER: tfvb
+      POSTGRES_PASSWORD: tfvb
     ports:
       - "5432:5432"
 
   redis:
     image: redis:alpine
     restart: always
-    container_name: tfrb_redis
+    container_name: tfvb_redis
     ports:
       - "6379:6379"
 
 volumes:
-  tfrb_postgresql_data:
+  tfvb_postgresql_data:
