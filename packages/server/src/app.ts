@@ -6,7 +6,7 @@ import fastifyPassport from '@fastify/passport';
 import fastifySecureSession from '@fastify/secure-session';
 import path from 'path';
 import config from 'config';
-import clientRoot from '@tfrb/client';
+import clientRoot from '@tfvb/client';
 
 const port = Number(process.env.PORT) || 4000;
 
@@ -36,13 +36,13 @@ app.register(fastifyPassport.initialize());
 app.register(fastifyPassport.secureSession());
 
 if (process.env.NODE_ENV !== 'development') {
-  // Serve the built React client
+  // Serve the built Vue.js client
   app.register(fastifyStatic, {
     root: clientRoot,
   });
 
-  // Explicitly set the not found handler to send the React app
-  // so that the React routing works
+  // Explicitly set the not found handler to send the Vue.js app
+  // so that the Vue.js routing works
   app.setNotFoundHandler((req, res) => {
     res.sendFile('index.html');
   });
