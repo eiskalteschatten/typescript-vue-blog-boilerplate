@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 import type { SerializedUser, UserLoginReply, UserRegistration } from '@tfvb/shared'
 
-import customAxios from '@/lib/axios'
+import customAxios from '@/helper/axios'
 
 interface LoginData {
   email: string;
