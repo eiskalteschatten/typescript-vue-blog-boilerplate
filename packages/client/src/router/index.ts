@@ -21,12 +21,18 @@ const router = createRouter({
     {
       path: '/login',
       name: 'Login',
-      component: () => import('../views/AuthLoginView.vue')
+      component: () => import('../views/AuthLoginView.vue'),
+      meta: {
+        title: 'Login',
+      },
     },
     {
       path: '/register',
       name: 'Register',
-      component: () => import('../views/AuthRegisterView.vue')
+      component: () => import('../views/AuthRegisterView.vue'),
+      meta: {
+        title: 'Register',
+      },
     }
   ]
 })
@@ -41,3 +47,8 @@ router.beforeEach(async (to) => {
     return { name: 'Login' }
   }
 })
+
+router.afterEach((to) => {
+  const defaultTitle = 'Typescript Fastify Vue.js Boilerplate';
+  document.title = to.meta.title ? `${to.meta.title} | ${defaultTitle}` : defaultTitle;
+});
