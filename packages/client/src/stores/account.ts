@@ -4,6 +4,7 @@ import axios from 'axios'
 import type { SerializedUser, UserLoginReply, UserRegistration } from '@tfvb/shared'
 
 import customAxios from '@/helpers/axios'
+import router from '@/router'
 
 interface LoginData {
   email: string;
@@ -34,6 +35,8 @@ export const useAccountStore = defineStore('account', () => {
 
       accountStore.refreshToken = data.refreshToken;
       localStorage.setItem('refreshToken', data.refreshToken)
+
+      router.push({ name: 'Home' })
     }
     catch (error: any) {
       accountStore.accountError = error.response?.data.message ?? error.message
@@ -64,6 +67,8 @@ export const useAccountStore = defineStore('account', () => {
 
       // TODO
       // Remove everything from store
+
+      router.push({ name: 'Login' })
     }
     catch (error: any) {
       accountStore.accountError = error.response?.data.message ?? error.message
@@ -89,6 +94,8 @@ export const useAccountStore = defineStore('account', () => {
 
       accountStore.refreshToken = data.refreshToken;
       localStorage.setItem('refreshToken', data.refreshToken)
+
+      router.push({ name: 'Home' })
     }
     catch (error: any) {
       accountStore.accountError = error.response?.data.message ?? error.message

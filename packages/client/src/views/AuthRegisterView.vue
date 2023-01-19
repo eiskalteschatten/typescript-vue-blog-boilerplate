@@ -55,7 +55,6 @@ async function register() {
         <button class="btn btn-primary" @click="register">Register</button>
       </div>
 
-
       <div class="text-center">
         <RouterLink :to="{ name: 'Login' }">Login</RouterLink>
       </div>
