@@ -44,12 +44,58 @@ export const useAccountStore = defineStore('account', () => {
   };
 
   const logout = async () => {
-    const { data } = await customAxios.post<UserLoginReply>('/api/auth/logout')
+    const accountStore = useAccountStore()
+
+    try {
+      accountStore.isLoading = true
+
+      await customAxios.post<UserLoginReply>('/api/auth/logout')
+
+      accountStore.user = undefined;
+      localStorage.removeItem('user');
+
+      accountStore.accessToken = undefined;
+      localStorage.removeItem('accessToken');
+
+      accountStore.refreshToken = undefined;
+      localStorage.removeItem('refreshToken');
+
+      accountStore.accountError = undefined;
+
+      // TODO
+      // Remove everything from store
+    }
+    catch (error: any) {
+      accountStore.accountError = error.response?.data.message ?? error.message
+    }
+    finally {
+      accountStore.isLoading = false
+    }
   };
 
   const register = async (registrationData: UserRegistration) => {
-    const { data } = await axios.post<UserLoginReply>('/api/user/register', { registrationData })
-    return data
+    const accountStore = useAccountStore()
+
+    try {
+      accountStore.isLoading = true
+
+      const { data } = await axios.post<UserLoginReply>('/api/user/register', { registrationData })
+
+      accountStore.user = data.user
+      localStorage.setItem('user', JSON.stringify(data.user))
+
+      accountStore.accessToken = data.accessToken;
+      localStorage.setItem('accessToken', data.accessToken)
+
+      accountStore.refreshToken = data.refreshToken;
+      localStorage.setItem('refreshToken', data.refreshToken)
+    }
+    catch (error: any) {
+      accountStore.accountError = error.response?.data.message ?? error.message
+    }
+    finally {
+      accountStore.isLoading = false
+    }
   };
 
   return {
