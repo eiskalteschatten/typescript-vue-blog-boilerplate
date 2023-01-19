@@ -5,11 +5,15 @@ import AuthLayout from '@/layouts/AuthLayout.vue'
 import { useAccountStore } from '@/stores/account'
 
 const accountStore = useAccountStore();
+const firstName = ref()
+const lastName = ref()
 const email = ref()
 const password = ref()
 
-async function login() {
-  await accountStore.login({
+async function register() {
+  await accountStore.register({
+    firstName: firstName.value,
+    lastName: lastName.value,
     email: email.value,
     password: password.value,
   });
@@ -18,9 +22,9 @@ async function login() {
 
 <template>
   <AuthLayout>
-    <div class="vstack gap-3 login">
+    <div class="vstack gap-3 register">
       <div>
-        <h3>Login</h3>
+        <h3>Register</h3>
       </div>
 
       <div v-if="accountStore.accountError" class="alert alert-danger">
@@ -28,8 +32,18 @@ async function login() {
       </div>
 
       <div>
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" v-model.trim="firstName">
+      </div>
+
+      <div>
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" v-model.trim="lastName">
+      </div>
+
+      <div>
         <label for="emailAddress" class="form-label">Email Address</label>
-        <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" v-model.trim="email">
+        <input type="email" class="form-control" id="emailAddress" v-model.trim="email">
       </div>
 
       <div>
@@ -38,18 +52,19 @@ async function login() {
       </div>
 
       <div class="my-3 text-center">
-        <button class="btn btn-primary" @click="login">Log In</button>
+        <button class="btn btn-primary" @click="register">Register</button>
       </div>
 
+
       <div class="text-center">
-        <RouterLink :to="{ name: 'Register' }">Register</RouterLink>
+        <RouterLink :to="{ name: 'Login' }">Login</RouterLink>
       </div>
     </div>
   </AuthLayout>
 </template>
 
 <styles scoped lang="scss">
-  .login {
+  .register {
     min-width: 300px;
   }
 </styles>
