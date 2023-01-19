@@ -4,27 +4,15 @@ import { ref } from 'vue';
 import AuthLayout from '@/layouts/AuthLayout.vue'
 import { useAccountStore } from '@/stores/account'
 
+const accountStore = useAccountStore();
 const email = ref()
 const password = ref()
-const loginError = ref()
 
 async function login() {
-  const accountStore = useAccountStore();
-
-  try {
-      accountStore.isLoading = true
-
-      await accountStore.login({
-        email: email.value,
-        password: password.value,
-      });
-    }
-    catch (error: any) {
-      loginError.value = error.message
-    }
-    finally {
-      accountStore.isLoading = false
-    }
+  await accountStore.login({
+    email: email.value,
+    password: password.value,
+  });
 }
 </script>
 
@@ -35,8 +23,8 @@ async function login() {
         <h3>Login</h3>
       </div>
 
-      <div v-if="loginError" class="alert alert-danger">
-        {{ loginError }}
+      <div v-if="accountStore.accountError" class="alert alert-danger">
+        {{ accountStore.accountError }}
       </div>
 
       <div>
