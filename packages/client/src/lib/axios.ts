@@ -1,7 +1,7 @@
 import axios, { AxiosHeaders } from 'axios';
 
 import { useAccountStore } from '@/stores/account';
-// import { setGlobalError, setIsLoading } from '@/store/entities/ui';
+import { useUIStore } from '@/stores/ui';
 
 let loadingTimeout: NodeJS.Timeout;
 
@@ -10,33 +10,35 @@ const dispatchIsLoading = (isLoading: boolean) => {
     clearTimeout(loadingTimeout);
   }
 
-  const store = useAccountStore();
+  const accountStore = useAccountStore();
 
   if (isLoading) {
-    loadingTimeout = setTimeout(() => store.isLoading = isLoading), 500;
+    loadingTimeout = setTimeout(() => accountStore.isLoading = isLoading), 500;
   }
   else {
-    store.isLoading = isLoading;
+    accountStore.isLoading = isLoading;
   }
 };
 
 const instance = axios.create();
 
 instance.interceptors.request.use(config => {
-  const store = useAccountStore();
+  const accountStore = useAccountStore();
 
-  store.isLoading = true;
+  accountStore.isLoading = true;
 
-  if (config.headers && store.accessToken) {
-    (config.headers as AxiosHeaders).set('Authorization', `Bearer ${store.accessToken}`);
+  if (config.headers && accountStore.accessToken) {
+    (config.headers as AxiosHeaders).set('Authorization', `Bearer ${accountStore.accessToken}`);
   }
 
   return config;
 },
 error => {
   dispatchIsLoading(false);
-  // TODO
-  // setGlobalError(error.message);
+
+  const uiStore = useUIStore();
+  uiStore.globalError = error.message;
+
   return Promise.reject(error);
 });
 
@@ -44,12 +46,12 @@ instance.interceptors.response.use(response => {
   dispatchIsLoading(false);
   return response;
 }, async error => {
-  const store = useAccountStore();
   const config = error.config;
+  const accountStore = useAccountStore();
 
   const goToLogin = async (): Promise<void> => {
     config._retry = false;
-    await store.logout();
+    await accountStore.logout();
     return Promise.resolve();
   };
 
@@ -65,11 +67,11 @@ instance.interceptors.response.use(response => {
     try {
       const { data: { accessToken } } = await axios.post<{ accessToken: string }>('/api/auth/refresh-access-token', undefined, {
         headers: {
-          Authorization: `Bearer ${store.refreshToken}`,
+          Authorization: `Bearer ${accountStore.refreshToken}`,
         },
       });
 
-      store.accessToken = accessToken;
+      accountStore.accessToken = accessToken;
 
       return instance(config);
     }
@@ -81,8 +83,9 @@ instance.interceptors.response.use(response => {
     return goToLogin();
   }
 
-  // TODO
-  // setGlobalError(error.message);
+  const uiStore = useUIStore();
+  uiStore.globalError = error.message;
+
   return Promise.reject(error);
 });
 
