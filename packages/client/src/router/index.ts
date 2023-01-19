@@ -39,7 +39,7 @@ const router = createRouter({
 
 export default router
 
-router.beforeEach(async (to) => {
+router.beforeEach((to) => {
   const { user, accessToken, refreshToken } = useAccountStore();
   const userIsLoggedin = user && accessToken && refreshToken;
 
