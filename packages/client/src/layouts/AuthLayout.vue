@@ -1,6 +1,6 @@
 <template>
   <main>
-    Login Layout
+    Auth Layout
 
     <slot></slot>
   </main>
