@@ -7,6 +7,7 @@ import './bootstrapTheme'
 import App from './App.vue'
 import router from './router'
 
+import './assets/global.scss'
 import './assets/bootstrap.scss'
 
 const app = createApp(App)
