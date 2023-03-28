@@ -14,5 +14,10 @@
   "scripts": {
     "lint": "eslint \"./**/*.{tsx,ts,js,json}\"",
     "build": "tsc"
+  },
+  "dependencies": {
+    "@types/jsdom": "^21.1.1",
+    "pino-pretty": "^10.0.0",
+    "vitest": "^0.29.7"
   }
 }
