@@ -1,10 +1,10 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
-import axios from 'axios'
-import type { SerializedUser, UserLoginReply, UserRegistration } from '@tfvb/shared'
+import { ref } from 'vue';
+import { defineStore } from 'pinia';
+import axios from 'axios';
+import type { SerializedUser, UserLoginReply, UserRegistration } from '@tfvb/shared';
 
-import customAxios from '@/helpers/axios'
-import router from '@/router'
+import customAxios from '@/helpers/axios';
+import router from '@/router';
 
 interface LoginData {
   email: string;
@@ -12,47 +12,47 @@ interface LoginData {
 }
 
 export const useAccountStore = defineStore('account', () => {
-  const localStorageUser = localStorage.getItem('user')
-  const user = ref<SerializedUser | undefined>(localStorageUser && JSON.parse(localStorageUser))
-  const accessToken = ref(localStorage.getItem('accessToken') || undefined)
-  const refreshToken = ref(localStorage.getItem('refreshToken') || undefined)
-  const isLoading = ref(false)
-  const accountError = ref()
+  const localStorageUser = localStorage.getItem('user');
+  const user = ref<SerializedUser | undefined>(localStorageUser && JSON.parse(localStorageUser));
+  const accessToken = ref(localStorage.getItem('accessToken') || undefined);
+  const refreshToken = ref(localStorage.getItem('refreshToken') || undefined);
+  const isLoading = ref(false);
+  const accountError = ref();
 
   const login = async (loginData: LoginData) => {
-    const accountStore = useAccountStore()
+    const accountStore = useAccountStore();
 
     try {
-      accountStore.isLoading = true
+      accountStore.isLoading = true;
 
-      const { data } = await axios.post<UserLoginReply>('/api/auth/login', loginData)
+      const { data } = await axios.post<UserLoginReply>('/api/auth/login', loginData);
 
-      accountStore.user = data.user
-      localStorage.setItem('user', JSON.stringify(data.user))
+      accountStore.user = data.user;
+      localStorage.setItem('user', JSON.stringify(data.user));
 
       accountStore.accessToken = data.accessToken;
-      localStorage.setItem('accessToken', data.accessToken)
+      localStorage.setItem('accessToken', data.accessToken);
 
       accountStore.refreshToken = data.refreshToken;
-      localStorage.setItem('refreshToken', data.refreshToken)
+      localStorage.setItem('refreshToken', data.refreshToken);
 
-      router.push({ name: 'Home' })
+      router.push({ name: 'Home' });
     }
     catch (error: any) {
-      accountStore.accountError = error.response?.data.message ?? error.message
+      accountStore.accountError = error.response?.data.message ?? error.message;
     }
     finally {
-      accountStore.isLoading = false
+      accountStore.isLoading = false;
     }
   };
 
   const logout = async () => {
-    const accountStore = useAccountStore()
+    const accountStore = useAccountStore();
 
     try {
-      accountStore.isLoading = true
+      accountStore.isLoading = true;
 
-      await customAxios.post<UserLoginReply>('/api/auth/logout')
+      await customAxios.post<UserLoginReply>('/api/auth/logout');
 
       accountStore.user = undefined;
       localStorage.removeItem('user');
@@ -68,40 +68,40 @@ export const useAccountStore = defineStore('account', () => {
       // TODO
       // Remove everything from store
 
-      router.push({ name: 'Login' })
+      router.push({ name: 'Login' });
     }
     catch (error: any) {
-      accountStore.accountError = error.response?.data.message ?? error.message
+      accountStore.accountError = error.response?.data.message ?? error.message;
     }
     finally {
-      accountStore.isLoading = false
+      accountStore.isLoading = false;
     }
   };
 
   const register = async (registrationData: UserRegistration) => {
-    const accountStore = useAccountStore()
+    const accountStore = useAccountStore();
 
     try {
-      accountStore.isLoading = true
+      accountStore.isLoading = true;
 
-      const { data } = await axios.post<UserLoginReply>('/api/user/register', { registrationData })
+      const { data } = await axios.post<UserLoginReply>('/api/user/register', { registrationData });
 
-      accountStore.user = data.user
-      localStorage.setItem('user', JSON.stringify(data.user))
+      accountStore.user = data.user;
+      localStorage.setItem('user', JSON.stringify(data.user));
 
       accountStore.accessToken = data.accessToken;
-      localStorage.setItem('accessToken', data.accessToken)
+      localStorage.setItem('accessToken', data.accessToken);
 
       accountStore.refreshToken = data.refreshToken;
-      localStorage.setItem('refreshToken', data.refreshToken)
+      localStorage.setItem('refreshToken', data.refreshToken);
 
-      router.push({ name: 'Home' })
+      router.push({ name: 'Home' });
     }
     catch (error: any) {
-      accountStore.accountError = error.response?.data.message ?? error.message
+      accountStore.accountError = error.response?.data.message ?? error.message;
     }
     finally {
-      accountStore.isLoading = false
+      accountStore.isLoading = false;
     }
   };
 
@@ -114,5 +114,5 @@ export const useAccountStore = defineStore('account', () => {
     login,
     logout,
     register,
-  }
-})
+  };
+});

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import AuthLayout from '@/layouts/AuthLayout.vue'
-import { useAccountStore } from '@/stores/account'
+import AuthLayout from '@/layouts/AuthLayout.vue';
+import { useAccountStore } from '@/stores/account';
 
 const accountStore = useAccountStore();
-const email = ref()
-const password = ref()
+const email = ref();
+const password = ref();
 
 async function login() {
   await accountStore.login({

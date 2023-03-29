@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import MainLayout from '@/layouts/MainLayout.vue'
-import TheWelcome from '@/components/TheWelcome.vue'
+import MainLayout from '@/layouts/MainLayout.vue';
+import TheWelcome from '@/components/TheWelcome.vue';
 import { useAccountStore } from '@/stores/account';
 
 // TODO: move this to a toolbar or somewhere that makes sense
 async function logout() {
-  const accountStore = useAccountStore()
+  const accountStore = useAccountStore();
   await accountStore.logout();
 }
 

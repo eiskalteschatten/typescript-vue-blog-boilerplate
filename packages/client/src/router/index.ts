@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 import { useAccountStore } from '@/stores/account';
 
@@ -8,12 +8,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: () => import('../views/HomeView.vue')
+      component: () => import('../views/HomeView.vue'),
     },
     {
       path: '/about',
       name: 'About',
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/AboutView.vue'),
     },
     {
       path: '/login',
@@ -30,23 +30,23 @@ const router = createRouter({
       meta: {
         title: 'Register',
       },
-    }
-  ]
-})
+    },
+  ],
+});
 
-export default router
+export default router;
 
 router.beforeEach((to) => {
   const { user, accessToken, refreshToken } = useAccountStore();
   const userIsLoggedin = user && accessToken && refreshToken;
 
   if (!userIsLoggedin && to.name !== 'Login' && to.name !== 'Register') {
-    return { name: 'Login' }
+    return { name: 'Login' };
   }
   else if (userIsLoggedin && (to.name === 'Login' || to.name === 'Register')) {
-    return { name: 'Home' }
+    return { name: 'Home' };
   }
-})
+});
 
 router.afterEach((to) => {
   const defaultTitle = 'Typescript Fastify Vue.js Boilerplate';
