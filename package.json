@@ -1,5 +1,5 @@
 {
-  "name": "typescript-fastify-vue-boilerplate",
+  "name": "the-beskirted-man",
   "version": "0.1.0",
   "description": "A boilerplate project for creating a project with a Vue.js frontend and a Fastify-based backend.",
   "main": "./packages/server/dist/src/server.js",
@@ -7,8 +7,8 @@
     "test": "npm run test -ws",
     "lint": "npm run lint -ws",
     "start": "npm --prefix ./packages/server start",
-    "predev": "docker compose up -d && npm run build -w=@tfvb/shared",
-    "dev": "concurrently \"npm run dev -w=@tfvb/shared\" \"npm run dev -w=@tfvb/client\" \"npm run dev -w=@tfvb/server\"",
+    "predev": "docker compose up -d && npm run build -w=@tbm/shared",
+    "dev": "concurrently \"npm run dev -w=@tbm/shared\" \"npm run dev -w=@tbm/client\" \"npm run dev -w=@tbm/server\"",
     "prebuild": "rm -rf ./packages/client/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
     "build": "npm run build -ws"
   },
@@ -41,9 +41,9 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@tfvb/client": "file:packages/client",
-    "@tfvb/server": "file:packages/server",
-    "@tfvb/shared": "file:packages/shared",
+    "@tbm/client": "file:packages/client",
+    "@tbm/server": "file:packages/server",
+    "@tbm/shared": "file:packages/shared",
     "@types/jsdom": "^21.1.1",
     "pino-pretty": "^10.0.0",
     "vitest": "^0.29.7"
