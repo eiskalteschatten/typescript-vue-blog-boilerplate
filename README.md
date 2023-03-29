@@ -1,3 +1,3 @@
-# Typescript Fastify Vue.js Boilerplate
+# The Beskirted Man
 
-A boilerplate project for creating a project with a Vue.js frontend and a Fastify-based backend.
+This is the website for The Beskirted Man including the server, the admin area and the frontend.
