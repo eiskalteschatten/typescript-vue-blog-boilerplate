@@ -7,9 +7,6 @@
     "package-lock.json"
   ],
   "main": "dist/index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "private": true,
   "scripts": {
     "lint": "eslint \"./**/*.{tsx,ts,js,json}\"",
