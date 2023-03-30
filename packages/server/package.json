@@ -23,7 +23,7 @@
     "@fastify/passport": "^2.2.0",
     "@fastify/secure-session": "^6.0.0",
     "@fastify/static": "^6.5.0",
-    "@tbm/client": "^0.1.0",
+    "@tbm/changing-room": "^0.1.0",
     "@tbm/shared": "^0.1.0",
     "@types/jsdom": "^21.1.1",
     "bcryptjs": "^2.4.3",
