@@ -8,9 +8,9 @@
     "lint": "npm run lint -ws",
     "start": "npm --prefix ./packages/server start",
     "predev": "docker compose up -d && npm run build -w=@tbm/shared",
-    "dev": "concurrently \"npm run dev -w=@tbm/shared\" \"npm run dev -w=@tbm/changing-room\" \"npm run dev -w=@tbm/server\"",
-    "prebuild": "rm -rf ./packages/changing-room/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
-    "build": "npm run build -w=@tbm/shared && npm run build -w=@tbm/changing-room && npm run build -w=@tbm/server"
+    "dev": "concurrently \"npm run dev -w=@tbm/shared\" \"npm run dev -w=@tbm/fitting-room\" \"npm run dev -w=@tbm/server\"",
+    "prebuild": "rm -rf ./packages/fitting-room/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
+    "build": "npm run build -w=@tbm/shared && npm run build -w=@tbm/fitting-room && npm run build -w=@tbm/server"
   },
   "workspaces": [
     "./packages/*"
@@ -41,7 +41,7 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@tbm/changing-room": "file:packages/changing-room",
+    "@tbm/fitting-room": "file:packages/fitting-room",
     "@tbm/server": "file:packages/server",
     "@tbm/shared": "file:packages/shared",
     "@types/jsdom": "^21.1.1",

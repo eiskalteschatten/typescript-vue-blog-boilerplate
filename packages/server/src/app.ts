@@ -6,7 +6,7 @@ import fastifyPassport from '@fastify/passport';
 import fastifySecureSession from '@fastify/secure-session';
 import path from 'path';
 import config from 'config';
-import clientRoot from '@tbm/changing-room';
+import clientRoot from '@tbm/fitting-room';
 
 const port = Number(process.env.PORT) || 4000;
 
@@ -17,9 +17,9 @@ const app = Fastify({
     },
   },
   ignoreTrailingSlash: true,
-  ...process.env.NODE_ENV !== 'development' && {
-    http2: true,
-  },
+  // ...process.env.NODE_ENV !== 'development' && {
+  //   http2: true,
+  // },
 });
 
 app.register(helmet, { global: true });
@@ -39,7 +39,7 @@ if (process.env.NODE_ENV !== 'development') {
   // Serve the built Vue.js client
   app.register(fastifyStatic, {
     root: clientRoot,
-    prefix: '/changing-room/',
+    prefix: '/fitting-room/',
   });
 
   // Explicitly set the not found handler to send the Vue.js app

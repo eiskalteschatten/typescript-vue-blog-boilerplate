@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   base: process.env.NODE_ENV === 'production'
-    ? '/changing-room/'
+    ? '/fitting-room/'
     : '/',
   ...process.env.NODE_ENV === 'development' && {
     server: {
