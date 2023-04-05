@@ -1,3 +1,7 @@
-# The Beskirted Man
+# typescript-vue-blog-boilerplate
 
-This is the website for The Beskirted Man including the server, the admin area and the frontend.
+Coming soon...
+
+---
+
+Alex Seifert - https://www.alexseifert.com

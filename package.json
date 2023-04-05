@@ -1,5 +1,5 @@
 {
-  "name": "the-beskirted-man",
+  "name": "typescript-vue-blog-boilerplate",
   "version": "0.1.0",
   "description": "A boilerplate project for creating a project with a Vue.js frontend and a Fastify-based backend.",
   "main": "./packages/server/dist/src/server.js",
@@ -17,14 +17,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eiskalteschatten/typescript-fastify-react-boilerplate.git"
+    "url": "git+https://github.com/eiskalteschatten/typescript-vue-blog-boilerplate.git"
   },
   "author": "Alex Seifert",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/eiskalteschatten/typescript-fastify-react-boilerplate/issues"
+    "url": "https://github.com/eiskalteschatten/typescript-vue-blog-boilerplate/issues"
   },
-  "homepage": "https://github.com/eiskalteschatten/typescript-fastify-react-boilerplate#readme",
+  "homepage": "https://github.com/eiskalteschatten/typescript-vue-blog-boilerplate#readme",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/user-event": "^14.0.0",
