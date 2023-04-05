@@ -8,9 +8,9 @@
     "lint": "npm run lint -ws",
     "start": "npm --prefix ./packages/server start",
     "predev": "docker compose up -d && npm run build -w=@tvbb/shared",
-    "dev": "concurrently \"npm run dev -w=@tvbb/shared\" \"npm run dev -w=@tvbb/server\" \"npm run dev -w=@tvbb/fitting-room\"",
-    "prebuild": "rm -rf ./packages/fitting-room/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
-    "build": "npm run build -w=@tvbb/shared && npm run build -w=@tvbb/fitting-room && npm run build -w=@tvbb/server"
+    "dev": "concurrently \"npm run dev -w=@tvbb/shared\" \"npm run dev -w=@tvbb/server\" \"npm run dev -w=@tvbb/admin\"",
+    "prebuild": "rm -rf ./packages/admin/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
+    "build": "npm run build -w=@tvbb/shared && npm run build -w=@tvbb/admin && npm run build -w=@tvbb/server"
   },
   "workspaces": [
     "./packages/*"
@@ -41,7 +41,7 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@tvbb/fitting-room": "file:packages/fitting-room",
+    "@tvbb/admin": "file:packages/admin",
     "@tvbb/server": "file:packages/server",
     "@tvbb/shared": "file:packages/shared",
     "@types/jsdom": "^21.1.1",

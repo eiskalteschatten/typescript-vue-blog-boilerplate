@@ -6,7 +6,7 @@ import fastifyPassport from '@fastify/passport';
 import fastifySecureSession from '@fastify/secure-session';
 import path from 'path';
 import config from 'config';
-import clientRoot from '@tvbb/fitting-room';
+import clientRoot from '@tvbb/admin';
 
 const port = Number(process.env.PORT) || 4000;
 
@@ -39,7 +39,7 @@ if (process.env.NODE_ENV !== 'development') {
   // Serve the built Vue.js client
   app.register(fastifyStatic, {
     root: clientRoot,
-    prefix: '/fitting-room/',
+    prefix: '/admin/',
   });
 
   // Explicitly set the not found handler to send the Vue.js app
