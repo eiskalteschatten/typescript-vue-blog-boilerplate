@@ -1,5 +1,5 @@
 {
-  "name": "@tbm/server",
+  "name": "@tvbb/server",
   "version": "0.1.0",
   "files": [
     "dist",
@@ -23,8 +23,8 @@
     "@fastify/passport": "^2.2.0",
     "@fastify/secure-session": "^6.0.0",
     "@fastify/static": "^6.5.0",
-    "@tbm/fitting-room": "^0.1.0",
-    "@tbm/shared": "^0.1.0",
+    "@tvbb/fitting-room": "^0.1.0",
+    "@tvbb/shared": "^0.1.0",
     "@types/jsdom": "^21.1.1",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.7",

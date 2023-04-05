@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 import axios from 'axios';
-import type { SerializedUser, UserLoginReply, UserRegistration } from '@tbm/shared';
+import type { SerializedUser, UserLoginReply, UserRegistration } from '@tvbb/shared';
 
 import customAxios from '@/helpers/axios';
 import router from '@/router';

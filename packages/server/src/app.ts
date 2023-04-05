@@ -6,7 +6,7 @@ import fastifyPassport from '@fastify/passport';
 import fastifySecureSession from '@fastify/secure-session';
 import path from 'path';
 import config from 'config';
-import clientRoot from '@tbm/fitting-room';
+import clientRoot from '@tvbb/fitting-room';
 
 const port = Number(process.env.PORT) || 4000;
 

@@ -7,10 +7,10 @@
     "test": "npm run test -ws",
     "lint": "npm run lint -ws",
     "start": "npm --prefix ./packages/server start",
-    "predev": "docker compose up -d && npm run build -w=@tbm/shared",
-    "dev": "concurrently \"npm run dev -w=@tbm/shared\" \"npm run dev -w=@tbm/server\" \"npm run dev -w=@tbm/fitting-room\"",
+    "predev": "docker compose up -d && npm run build -w=@tvbb/shared",
+    "dev": "concurrently \"npm run dev -w=@tvbb/shared\" \"npm run dev -w=@tvbb/server\" \"npm run dev -w=@tvbb/fitting-room\"",
     "prebuild": "rm -rf ./packages/fitting-room/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
-    "build": "npm run build -w=@tbm/shared && npm run build -w=@tbm/fitting-room && npm run build -w=@tbm/server"
+    "build": "npm run build -w=@tvbb/shared && npm run build -w=@tvbb/fitting-room && npm run build -w=@tvbb/server"
   },
   "workspaces": [
     "./packages/*"
@@ -41,9 +41,9 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@tbm/fitting-room": "file:packages/fitting-room",
-    "@tbm/server": "file:packages/server",
-    "@tbm/shared": "file:packages/shared",
+    "@tvbb/fitting-room": "file:packages/fitting-room",
+    "@tvbb/server": "file:packages/server",
+    "@tvbb/shared": "file:packages/shared",
     "@types/jsdom": "^21.1.1",
     "pino-pretty": "^10.0.0",
     "vitest": "^0.29.7"
