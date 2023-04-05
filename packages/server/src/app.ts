@@ -1,6 +1,6 @@
 import Fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
-import helmet from '@fastify/helmet';
+// import helmet from '@fastify/helmet';
 import { fastifyAutoload } from '@fastify/autoload';
 import fastifyPassport from '@fastify/passport';
 import fastifySecureSession from '@fastify/secure-session';
@@ -23,7 +23,7 @@ const app = Fastify({
   // },
 });
 
-app.register(helmet, { global: true });
+// app.register(helmet, { global: true });
 
 app.register(fastifyAutoload, {
   dir: path.join(__dirname, 'routes'),

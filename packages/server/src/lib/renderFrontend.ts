@@ -10,6 +10,13 @@ export async function renderFrontend(): Promise<string> {
     <html>
       <head>
         <title>Blog</title>
+        <script type="importmap">
+          {
+            "imports": {
+              "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+          }
+        </script>
         <script type="module" src="/assets/client.js"></script>
       </head>
       <body>
