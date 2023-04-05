@@ -7,10 +7,10 @@
     "test": "npm run test -ws",
     "lint": "npm run lint -ws",
     "start": "npm --prefix ./packages/server start",
-    "predev": "docker compose up -d && npm run build -w=@tvbb/shared",
-    "dev": "concurrently \"npm run dev -w=@tvbb/shared\" \"npm run dev -w=@tvbb/server\" \"npm run dev -w=@tvbb/admin\"",
+    "predev": "docker compose up -d && npm run build -w=@tvbb/shared && npm run build -w=@tvbb/frontend",
+    "dev": "concurrently \"npm run dev -w=@tvbb/shared\" \"npm run dev -w=@tvbb/frontend\" \"npm run dev -w=@tvbb/server\" \"npm run dev -w=@tvbb/admin\"",
     "prebuild": "rm -rf ./packages/admin/build && rm -rf ./packages/server/dist && rm -rf ./packages/shared/dist",
-    "build": "npm run build -w=@tvbb/shared && npm run build -w=@tvbb/admin && npm run build -w=@tvbb/server"
+    "build": "npm run build -w=@tvbb/shared && npm run build -w=@tvbb/frontend && npm run build -w=@tvbb/admin && npm run build -w=@tvbb/server"
   },
   "workspaces": [
     "./packages/*"

@@ -1,7 +1,9 @@
 import { FastifyRequest, FastifyReply, FastifyInstance } from 'fastify';
+import renderFrontend from '~/lib/renderFrontend';
 
 export default async (app: FastifyInstance) => {
-  app.get('/', (req: FastifyRequest, reply: FastifyReply) => {
-    reply.send('Homepage');
+  app.get('/', async (req: FastifyRequest, reply: FastifyReply) => {
+    const testString = await renderFrontend();
+    reply.type('text/html').send(testString);
   });
 };

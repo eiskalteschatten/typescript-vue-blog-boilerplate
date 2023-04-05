@@ -9,6 +9,8 @@
   "main": "dist/index.js",
   "private": true,
   "scripts": {
-    "lint": "eslint \"./**/*.{tsx,ts,js,json}\""
+    "lint": "eslint \"./**/*.{tsx,ts,js,json}\"",
+    "build": "tsc",
+    "dev": "tsc --watch"
   }
 }
