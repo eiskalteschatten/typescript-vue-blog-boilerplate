@@ -53,6 +53,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "@tvbb/admin": "file:packages/admin",
+    "@tvbb/frontend": "file:packages/frontend",
     "@tvbb/server": "file:packages/server",
     "@tvbb/shared": "file:packages/shared",
     "@types/jsdom": "^21.1.1",
