@@ -17,8 +17,9 @@
     "skipLibCheck": true
   },
   "include": [
-    "client/**/*.ts",
-    "server/**/*.ts"
+    "templates/**/*.ts",
+    "index.ts",
+    "client.ts"
   ],
   "exclude": [
     "dist",
