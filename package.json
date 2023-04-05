@@ -38,14 +38,28 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-promise": "^6.0.0",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "vitest": "^0.29.7",
+    "vite": "^4.0.0",
+    "vue-tsc": "^1.0.12",
+    "eslint-plugin-vue": "^9.3.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/test-utils": "^2.2.6",
+    "@vue/tsconfig": "^0.1.3",
+    "sass": "^1.57.1",
+    "@types/bootstrap": "^5.2.6"
   },
   "dependencies": {
     "@tvbb/admin": "file:packages/admin",
     "@tvbb/server": "file:packages/server",
     "@tvbb/shared": "file:packages/shared",
     "@types/jsdom": "^21.1.1",
+    "pino": "^8.5.0",
     "pino-pretty": "^10.0.0",
-    "vitest": "^0.29.7"
+    "vue": "^3.2.45",
+    "pinia": "^2.0.28",
+    "bootstrap": "^5.3.0-alpha3",
+    "@popperjs/core": "^2.11.6"
   }
 }
