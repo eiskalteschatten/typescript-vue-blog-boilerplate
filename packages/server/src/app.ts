@@ -7,6 +7,7 @@ import fastifySecureSession from '@fastify/secure-session';
 import path from 'path';
 import config from 'config';
 import clientRoot from '@tvbb/admin';
+import { frontendRoot } from '@tvbb/frontend';
 
 const port = Number(process.env.PORT) || 4000;
 
@@ -34,6 +35,11 @@ app.register(fastifySecureSession, {
 });
 app.register(fastifyPassport.initialize());
 app.register(fastifyPassport.secureSession());
+
+app.register(fastifyStatic, {
+  root: frontendRoot,
+  prefix: '/assets/',
+});
 
 if (process.env.NODE_ENV !== 'development') {
   // Serve the built Vue.js client

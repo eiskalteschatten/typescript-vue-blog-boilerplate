@@ -10,7 +10,6 @@
     "esModuleInterop": true,
     "allowJs": true,
     "outDir": "./dist",
-    "baseUrl": "./src",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "noImplicitOverride": true,
@@ -18,7 +17,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*.ts"
+    "client/**/*.ts",
+    "server/**/*.ts"
   ],
   "exclude": [
     "dist",

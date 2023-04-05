@@ -10,6 +10,7 @@ export async function renderFrontend(): Promise<string> {
     <html>
       <head>
         <title>Blog</title>
+        <script type="module" src="/assets/client.js"></script>
       </head>
       <body>
         <div id="app">${html}</div>

@@ -1,4 +1,5 @@
 import { createSSRApp } from 'vue';
+import path from 'path';
 
 export function createApp() {
   return createSSRApp({
@@ -6,3 +7,5 @@ export function createApp() {
     template: `<button @click="count++">{{ count }}</button>`
   });
 }
+
+export const frontendRoot = path.resolve(__dirname, 'dist');
