@@ -3,24 +3,24 @@ version: "3.8"
 services:
   postgres:
     image: mariadb:10
-    container_name: tbm_mariadb
+    container_name: tvbb_mariadb
     restart: always
     volumes:
-      - "tbm_mariadb_data:/var/lib/mysql"
+      - "tvbb_mariadb_data:/var/lib/mysql"
     environment:
-      MARIADB_DATABASE: tbm
-      MARIADB_USER: tbm
-      MARIADB_PASSWORD: tbm
-      MARIADB_ROOT_PASSWORD: tbm
+      MARIADB_DATABASE: tvbb
+      MARIADB_USER: tvbb
+      MARIADB_PASSWORD: tvbb
+      MARIADB_ROOT_PASSWORD: tvbb
     ports:
       - "3306:3306"
 
   redis:
     image: redis:alpine
     restart: always
-    container_name: tbm_redis
+    container_name: tvbb_redis
     ports:
       - "6379:6379"
 
 volumes:
-  tbm_mariadb_data:
+  tvbb_mariadb_data:
